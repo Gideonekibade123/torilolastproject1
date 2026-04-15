@@ -35,7 +35,7 @@ const Signin = () => {
       //     }),
       //   }
       // );
-         const response = await fetch(
+     const response = await fetch(
   "https://mascofashion.onrender.com/api/users/login/",
   {
     method: "POST",
@@ -44,16 +44,14 @@ const Signin = () => {
     },
     body: JSON.stringify({
       email: email,
-      username: email,
       password: password,
     }),
   }
 );
 
+const data = await response.json();
+
 console.log(data);
-
-
-      const data = await response.json();
 
       if (response.ok) {
         // ✅ Save tokens
