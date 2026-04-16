@@ -9,21 +9,21 @@ const Signin = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  // ✅ If user already logged in, do not show signin again
-//  useEffect(() => {
-//   const token = localStorage.getItem("access");
-//   if (token && token !== "undefined") {
-//     navigate("/ShopPage");
-//   }
-// }, [navigate]);
-
-useEffect(() => {
+  ✅ If user already logged in, do not show signin again
+ useEffect(() => {
   const token = localStorage.getItem("access");
-
   if (token && token !== "undefined") {
-    navigate("/ShopPage", { replace: true });
+    navigate("/ShopPage");
   }
-}, []);
+}, [navigate]);
+
+// useEffect(() => {
+//   const token = localStorage.getItem("access");
+
+//   if (token && token !== "undefined") {
+//     navigate("/ShopPage", { replace: true });
+//   }
+// }, []);
 
 
 
