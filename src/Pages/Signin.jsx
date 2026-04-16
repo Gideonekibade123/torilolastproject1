@@ -10,12 +10,22 @@ const Signin = () => {
   const navigate = useNavigate();
 
   // ✅ If user already logged in, do not show signin again
- useEffect(() => {
+//  useEffect(() => {
+//   const token = localStorage.getItem("access");
+//   if (token && token !== "undefined") {
+//     navigate("/ShopPage");
+//   }
+// }, [navigate]);
+
+useEffect(() => {
   const token = localStorage.getItem("access");
+
   if (token && token !== "undefined") {
-    navigate("/ShopPage");
+    navigate("/ShopPage", { replace: true });
   }
-}, [navigate]);
+}, []);
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
