@@ -117,9 +117,12 @@ function ShopPage() {
           // images: item.images.length
             // ? item.images.map((img) => `https://mascofashion.onrender.com${img.image}`)
             // : ["https://via.placeholder.com/300x300?text=No+Image"],
-          images: item.images.length
-             ? item.images.map((img) => img.image_url)
-             : ["https://via.placeholder.com/300x300?text=No+Image"],
+          // images: item.images.length
+          //    ? item.images.map((img) => img.image_url)
+          //    : ["https://via.placeholder.com/300x300?text=No+Image"],
+          images: item.images.filter((img) => img.image_url).length
+   ? item.images.filter((img) => img.image_url).map((img) => img.image_url)
+   : ["https://via.placeholder.com/300x300?text=No+Image"],
 
           colors: ["black", "white", "gray"],
           sizes: ["S", "M", "L"],
